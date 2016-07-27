@@ -1,0 +1,16 @@
+<h1>You searched for: <%= @search_term %></h1>
+
+<table border="1">
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Link to recipe</th>
+  </tr>
+  <% @recipes.each do |r| %>
+  <tr class="<%= cycle('even', 'odd') %>">
+    <td><%= image_tag(r["image_url"]) %></td>
+    <td><%= r["title"] %></td>
+    <td><%= link_to r["f2f_url"], r["f2f_url"], target: "_blank" %></td>
+  </tr>
+  <% end %>
+</table>
